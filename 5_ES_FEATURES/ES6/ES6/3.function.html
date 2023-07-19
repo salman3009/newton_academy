@@ -1,0 +1,32 @@
+<html>
+<head>
+    
+</head>
+<body>
+    Function
+</body>
+</html>
+
+<script>
+//Parameters and Arguments:
+function foo(a,b)//declaration.In this a and b are parameters
+{
+console.log(a,b);
+}
+foo(10,20);//passed function. In the 10 and 20 are arguments.
+
+//Default Parameters:
+function foo1(a,b)
+{
+    console.log(a,b);
+}
+foo1();//------------------>undefined undefined 
+foo1(5,10);//------------->5 10
+
+function foo2(a=10,b=20)
+{
+    console.log(a,b);
+}
+foo2();//------------>10 20--->Default values
+foo2(5,10);//------->5,10
+</script>

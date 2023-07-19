@@ -1,0 +1,60 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+       Destructing 
+    </body>
+</html>
+<script>
+//Problem in JavaScript:
+//Javascript allows constructing arrays/objects, one property at a time or multiple properties at a time
+//example:
+const name={first:'kim',last:'Johnson'};
+//Extracting data had to be done one property at a time. There was no way to extract multiple properties at a time.
+//Example:
+const firstname=name.first;
+const lastname=name.last;
+//Solution:
+//Destructuring arrays:
+//Taking array elements directly into variables:
+var[one,two,three,four]=["chennai","mumbai","goa","cochin"];
+console.log(one);//=>chennai
+//Skipping values and taking second array element in variable two:
+var[,two,,]=["chennai","mumbai","goa","cochin"];
+console.log(two);//=>mumbai
+//Destructing Nested Arrays:
+const[one1,two1,three1]=[1,[2,3],[4,5]];
+//one=>1two=>[2,3],three=>[4,5]
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Destructing Objects:
+//In Objects,variables can be skipped using commas.
+//Example:Taking object elements directly into variables
+var {firstName:first,lastName:last,...details}={
+    firstName:"Neha",
+    lastName:"Singh",
+    age:40,
+    city:"chennai",
+    phone:9800000000
+}
+console.log(first,details);
+//Output:Neha{age:40,city:"chennai",phone:9800000000}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+//Destructing Nested Objects:
+
+//Declaration below would assign values a=1,b=2 and c={four:4,five:5}
+const{one2:a,two2:b,three2:c}={one2:1,two2:2,three2:{four2:4,five2:5}};
+
+//For readability we can use one:one instead of one:a.Declaration below would assign
+// const{one3:one,two3:two,three3:three}={one3:1,two3:2,three3:{four3:4,five3:5}};
+
+//Similarly,the declaration below will assign:
+//one=1,two=2 and three=3
+const{one4,two4,three4}={one4:1,two4:2,three4:3};
+//Default values can also be used in Destructing
+const{one5,two5,three5,four5=4}={one5:1,two5:2,three5:3};
+
+</script>

@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>
+Generator function
+</title>
+</head>
+<body>
+<p>Generator</p>
+</body>
+</html>
+
+<script>
+function *foo() {
+        yield 'hi';
+        yield 'dude';
+}
+let iterator = foo();
+console.log(iterator.next()); //Object {value: "hi", done: false}
+console.log("It is waiting");
+console.log(iterator.next()); //Object {value: "dude", done: false}
+console.log(iterator.next()); //Object {value: undefined, done: true}
+////////////////////////////////////////////////////////////////////////
+function *boo() {
+    yield* ['hi', 'hello'];        
+}
+
+let iteratorboo = boo()
+console.log(iteratorboo.next());  // Object {value: "hi", done: false}
+console.log(iteratorboo.next());  // Object {value: "hello", done: false}
+console.log(iteratorboo.next());  // Object {value: undefined, done: true}
+/////////////////////////////////////////////////////////////////////////////
+//Return in Generators
+function *booreturn() {
+    yield 'hi';
+    yield 'dude';
+    return "bye";
+}
+
+let iteratorreturn = booreturn();
+console.log(iteratorreturn.next());  // Object {value: "hi", done: false}
+console.log(iteratorreturn.next());  // Object {value: "dude", done: false}
+console.log(iteratorreturn.next());  // Object {value: "bye", done: true}
+console.log(iteratorreturn.next());  // Object {value: undefined, done: true}
+///////////////////////////////////////////////////////////////////////////////////
+function *part1() {
+    yield* ['hi', 'hello'];        
+}
+function *part2() {
+    yield* part1();
+    yield "bye";        
+}
+let part1iterator = part2()
+console.log(part1iterator.next());  // Object {value: "hi", done: false}
+console.log(part1iterator.next());  // Object {value: "hello", done: false}
+console.log(part1iterator.next());  // Object {value: "bye", done: true}
+console.log(part1iterator.next());  // Object {value: undefined, done: true}
+////////////////////////////////////////////////////////////////////////////////////////
+//Generator with arguments
+function* person() {
+    let age = yield 'Age please';
+    console.log(age);                                                    
+    let location = yield 'Your age is ' + age + 'Your location please....';
+    console.log(location);                                                       
+	return location;                                                          
+	}
+let iteratorperson = person();
+iteratorperson.next();    
+// Object {value: "Age please", done: false}
+iteratorperson.next(10);  
+// Object {value: "Your age is 10 Your location please....", done: false}
+iteratorperson.next('LA') 
+//   Object {value: "LA", done: true}
+
+</script>

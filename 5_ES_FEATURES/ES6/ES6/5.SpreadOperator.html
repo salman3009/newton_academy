@@ -1,0 +1,35 @@
+<html>
+    <head></head>
+    <body>
+        Spread Operator
+    </body>
+</html>
+<script>
+//Spread Parameter
+//Spread Operator is used to spread an array elements into parameters.
+
+function sum(x,y,z)
+{
+    return x+y+z;
+}
+let args = [1,2,3];
+let add = sum(...args);
+console.log(add);
+
+//Spread Operator can be used for
+//(i)Concatenation of arrays
+var parts =["shouldler","knees"];
+var bodyParts=["head",...parts,"and","toes"];
+console.log(bodyParts);
+//OutPut:["head","shoulder","knees","and","toes"];
+//(ii)Math Functions
+let numbers = [9,4,7,1];
+console.log(Math.max(...numbers));
+//Output:9
+//(iii)Destructuring arrays and objects
+let[s1,s2,...s3]=[1,2,3,4,5,6,7,8,9];//--->Array
+//would mean x=1,y=2,z=[3,4,5,6,7,8,9];
+let {b1,b2,...b3}={x:1,y:2,z:3,a:4};//Object
+//would mean x=1,y=2,z={z:3,a:4}
+
+</script>

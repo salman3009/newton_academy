@@ -1,0 +1,38 @@
+<script>
+let sum=[2,3,4,5];
+let total=0;
+/*Adding sum without reduce function*/
+for(let i=0;i<sum.length;i++)
+{
+    total+=sum[i];
+}
+console.log(total);
+
+
+/*Adding sum with reduce function*/
+const totalValue=sum.reduce((acc,value)=>{
+    return acc+value;
+},0);
+console.log(totalValue);
+
+
+let person=[
+    {
+        id:1,
+        country:"india"
+    }
+    ,{
+        id:2,
+        country:"china"
+    },
+    {
+        id:3,
+        country:"usa"
+    }
+];
+
+const final=person.reduce((cal,value)=>{
+    return value.country=="usa"?cal:cal+=value.id;
+},0)
+console.log(final);
+</script>

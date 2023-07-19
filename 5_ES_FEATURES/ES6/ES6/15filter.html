@@ -1,0 +1,24 @@
+<script>
+let filterperson=[
+    {
+        pilot:"A",
+        name:"sallu"
+    },{
+        pilot:"B",
+        name:"Ramesh"
+    },
+    {
+        pilot:"B",
+        name:"jack"
+    }
+];
+const pilotA=filterperson.filter((a)=>{
+    return a.pilot==="A";
+});
+console.log(pilotA);
+const pilotB=filterperson.filter((a)=>{
+    return a.pilot==="B";
+});
+console.log(pilotB);
+console.log(filterperson);
+</script>

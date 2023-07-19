@@ -1,0 +1,20 @@
+<html>
+    <head></head>
+    <body>Const</body>
+</html>
+<script>
+const d=20;
+//d=20;
+//syntax error
+
+const car ={name:'Benz',class:'c'}
+car.class='e'
+console.log(car);
+//{name:'Benz',class:'e'}
+//Using freeze()
+const van = Object.freeze({name:'Benz',class:'c'});
+van.class='s';
+console.log(van);
+//{name:'Benz',class:'c'}
+
+</script>

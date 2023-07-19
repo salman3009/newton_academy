@@ -1,0 +1,64 @@
+<script>
+class PrivateMethods {
+
+// Private method
+#privateName() {
+console.log("I am available only in methods of this class");
+}
+
+// Public method
+publicName() {
+this.#privateName();
+console.log("I am available to all objects of this class");
+}
+}
+
+const method = new PrivateMethods();
+method.publicName();
+// Output: I am available only in methods of this class
+// I am available to all objects of this class
+
+method.privateName();
+// Error: method.privateName is not a function.
+</script>
+
+
+<script>
+    const first= new Promise((resolve, reject) => {
+  reject("I am rejected");
+});
+
+const second= new Promise((resolve, reject) => {
+  setTimeout(resolve, 500, "I will resolve in 500ms");
+});
+
+const third= new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, "I will resolve in 100ms");
+});
+
+Promise.any([first, second, third]).then((response) => {
+  console.log(response);})
+
+// Output: I will resolve in 100ms
+</script>
+
+
+<script>
+//Numeric Operator:
+const number = 9000000000;
+console.log(number === 10 ** 9);
+</script>
+
+<script>
+//replaceAll
+
+let string = "Javascript is used in front-end development. Javascript is also used in backend development using NodeJS"
+
+// replace method
+console.log(string.replace("Javascript", "Typescript"));
+// Output: Typescript is used in front-end development. Javascript is also used in backend development using NodeJS
+
+// new replaceAll method
+console.log(string.replaceAll("Javascript", "Typescript"));
+// Output: Typescript is used in front-end development. Typescript is also used in backend development using NodeJS
+</script>

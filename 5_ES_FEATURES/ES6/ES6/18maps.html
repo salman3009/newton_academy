@@ -1,0 +1,25 @@
+<script>
+let person=[
+{id:1,name:"salman"},
+{id:2,name:"jack"},
+{id:3,name:"sallu"}    
+];
+
+/*method1 using foreach for extracting the id from array*/
+//1.forEach
+//It will allow a callback function to mutate the current array. 
+//2.map
+//map() allocates memory and stores return values. 
+//forEach() throws away return values and always returns undefined.
+
+let separateId=[];
+person.forEach(function(a,index){
+    console.log(index);
+    separateId.push(a.id);
+});
+console.log(separateId);
+
+/*using callbacks in array*/
+const separatemapId=person.map(a=>a.id);
+console.log(separatemapId);
+</script>

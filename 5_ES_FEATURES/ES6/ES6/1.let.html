@@ -1,0 +1,50 @@
+<html>
+<head></head>
+<body>Let</body>
+</html>
+<script>
+var x=10;
+console.log(window.x)//10
+let y=10;
+console.log(window.y)//undefined
+
+
+
+function sum(n)
+{
+    //variable i is available here.
+    for(var i=0;i<n.length;i++)
+    {
+        console.log(n[i]);
+        //some code
+    }
+    //variable i is also available here.
+}
+//'let' is block scope.
+sum([2,3,4]);
+
+
+function sum(n)
+{
+    //variable i is not available here.
+    for(let i=0;i<n.length;i++)
+    {
+        console.log(n[i]);
+        //some code
+    }
+    //variable i is not also available here.
+}
+sum([2,3,4,8]);
+
+
+//'let' doesn't allow re-declaring a variable
+//Example:
+var c=10;
+var c=11;
+console.log(c)//11
+
+
+let d=10;
+// let d =11;
+//Uncaught SyntaxError
+</script>

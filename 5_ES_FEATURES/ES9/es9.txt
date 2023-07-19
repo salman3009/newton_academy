@@ -1,0 +1,78 @@
+So let’s see what they have added or updated in the past year:
+Regular Expression:
+
+1. Lots of Regex changes
+We have four modifications for regex. Let’s see them:
+
+s (dotAll) flag for regular expressions
+While using regular expressions, you expect that the dot . matches a single character, but it’s not always true. One exception is with line terminator characters:
+
+/hello.bye/.test('hello\nbye') // prints false
+The solution is the new flag /s (from singleline):
+
+/hello.bye/s.test('hello\nbye')  // prints true
+RegExp named capture groups
+This is the old way of getting the year, month, and day from a date:
+
+const REGEX = /([0-9]{4})-([0-9]{2})-([0-9]{2});const results = REGEX.exec('2018-07-12');console.log(results[1]); // prints 2018console.log(results[2]); // prints 07console.log(results[3]); // prints 12
+And if you are working with a long regex, you know how hard it is to keep track of the groups, parentheses, and the indices. With the new named capture group, it's possible to:
+
+const REGEX = /(?<year>[0-9]{4})-(?<month>[0-9]{2})-(?<day>[0-9]{2});const results = REGEX.exec('2018-07-12');console.log(results.groups.year);  // prints 2018console.log(results.groups.month); // prints 07console.log(results.groups.day);   // prints 12
+RegExp Look behind Assertions
+There are two versions of look behind assertions: positive and negative.
+
+a) Positive (?<=…)
+
+'$foo #foo @foo'.replace(/(?<=#)foo/g, 'XXX')// prints $foo #XXX @foo
+This (?<=#)foo/g regex says that the word must start with # and it doesn’t contribute to the overall matched string (so it won't replace the # character).
+
+b) Negative (?<!…)
+
+'$foo #foo @foo'.replace(/(?<!#)foo/g, 'XXX')// prints $XXX #foo @XXX
+On the contrary, this assertion guarantees that it doesn't start with #.
+
+RegExp Unicode Property Escapes
+Now we can search for characters by mentioning their Unicode character property inside of \p{}
+
+/\p{Script=Greek}/u.test('μ') // prints true
+You can check out more of the properties by clicking here.
+
+2. Rest/Spread Properties
+The rest operator (...) copies the remaining property keys that were not mentioned. Let's look at an example:
+
+const values = {a: 1, b: 2, c: 3, d: 4};const {a, ...n} = values;console.log(a);   // prints 1console.log(n);   // prints {b: 2, c: 3, d: 4}
+3. Promise.prototype finally
+This new callback will always be executed, if catch was called or not.
+
+fetch('http://website.com/files').then(data => data.json()).catch(err => console.error(err)).finally(() => console.log('processed!'))
+4. Asynchronous Iteration
+Finally!
+
+Now we can use await on our loops declarations.
+
+
+const fruitsToGet = ['apple', 'grape', 'pear'];
+
+const getNumFruits=()=>{
+    return new Promise((resolve,reject)=>{
+        resolve("aa")
+    })
+};
+
+const forLoop = async _ => {
+  console.log('Start')
+
+  for (let index = 0; index < fruitsToGet.length; index++) {
+    const fruit = fruitsToGet[index]
+    const numFruit = await getNumFruit(fruit)
+    console.log(numFruit)
+  }
+
+  console.log('End')
+}
+
+
+
+
+
+

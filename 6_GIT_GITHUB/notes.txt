@@ -1,0 +1,9 @@
+commands:
+git clone url 
+git add .
+git commit -m "code"
+git push origin url 
+git pull url 
+git status 
+git branch 
+git checkout -b new_branch 

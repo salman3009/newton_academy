@@ -1,0 +1,26 @@
+<script>
+function doHomeWork(a,callback)
+{
+    console.log("The value of a"+a);
+    callback();
+}
+function finish()
+{
+    console.log("This is finish one");
+    afterfinish(3,finish2);
+}
+
+function afterfinish(c,callback)
+{
+    console.log("the value of c"+c);
+    callback();
+}
+function finish2()
+{
+console.log("This is finish two");
+}
+
+doHomeWork(3,finish);
+
+
+</script>

@@ -1,0 +1,54 @@
+//Maps
+
+<script>
+var myMap = new Map();
+
+var keyString = 'a string',
+    keyObj = {},
+    keyFunc = function() {};
+
+// setting the values
+myMap.set(keyString, "value associated with 'a string'");
+myMap.set(keyObj, 'value associated with keyObj');
+myMap.set(keyFunc, 'value associated with keyFunc');
+
+myMap.size; // 3
+
+// getting the values
+console.log(myMap.get(keyString));    // "value associated with 'a string'"
+console.log(myMap.get(keyObj));       // "value associated with keyObj"
+console.log(myMap.get(keyFunc));      // "value associated with keyFunc"
+
+console.log(myMap.get('a string'));   // "value associated with 'a string'"            
+console.log(myMap.get({}));       // because keyString === 'a string'     
+console.log(myMap.get(function() {}));  // undefined, because keyObj !== {}
+//////////////////////////////////////////////////////////////////////////////////////////
+var myMap = new Map();
+myMap.set(0, 'zero');
+myMap.set(1, 'one');
+for (var [key, value] of myMap) {
+  console.log(key + ' = ' + value);
+}
+// 0 = zero
+// 1 = one
+
+for (var key of myMap.keys()) {
+  console.log(key);
+}
+// 0
+// 1
+
+for (var value of myMap.values()) {
+  console.log(value);
+}
+// zero
+// one
+
+for (var [key, value] of myMap.entries()) {
+  console.log(key + ' = ' + value);
+}
+// 0 = zero
+// 1 = one
+
+
+</script>

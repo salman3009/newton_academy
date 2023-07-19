@@ -1,0 +1,31 @@
+ECMAScript 2016 introduced only two new features:
+
+Array.prototype.includes()
+Exponentiation operator
+Array.prototype.includes()
+Array.prototype.includes() checks the array for the value passed as an argument. It returns true if the array contains the value, otherwise, it returns false.
+
+Before, we needed to use Array.prototype.indexOf() to check if the given array contains an element or not.
+
+let numbers = [1, 2, 3, 4];
+if(numbers.indexOf(2) !== -1) {  console.log('Array contains value');}
+With ECMA2016, we can write:
+
+if(numbers.includes(2)) {  console.log('Array contains value');}
+Array.prototype.includes() handles NaN better than Array.prototype.indexOf(). If the array contains NaN, then indexOf() does not return a correct index while searching for NaN.
+
+Array.prototype.includes() returns the correct value when searching for NaN.
+
+NaN is a property of the JavaScript global object and represents a value that is Not-a-Number. There are known quirks when comparing NaN to another value. These are addressed in Array.prototype.includes(), but not in Array.protoype.indexOf.
+
+let numbers = [1, 2, 3, 4, NaN];
+console.log(numbers.indexOf(NaN)); //Prints -1console.log(numbers.includes(NaN)); //Prints true
+Exponentiation Operator
+JavaScript already supports many arithmetic operators like +, -, * and more.
+
+ECMAScript 2016 introduced the exponentiation operator, **.
+
+It has the same purpose as Math.pow(). It returns the first argument raised to the power of the second argument.
+
+let base = 3;let exponent = 4;let result = base**exponent;
+console.log(result); //81

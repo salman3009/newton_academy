@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>
+Class
+</title>
+</head>
+</html>
+<script>
+class ArithmeticOperations {
+    constructor(x, y){
+         this.x = x;
+         this.y = y;
+    }
+    multiply(x,y) {
+         return this.x * this.y;
+    }
+}
+let operation = new ArithmeticOperations(2, 3);   
+console.log(operation.multiply()); 
+
+class Food {
+  static describe () {
+    console.log("Food is a data type for storing macronutrient information.");
+  }
+}
+console.log(Food.describe());  
+////////////////////////////////////////////////////////////////////////////////////////////
+//Inheritance
+class Addition extends ArithmeticOperations {
+}
+let operation1 = new Addition(2, 3);
+console.log(operation1.multiply());
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Inheritance - SuperClassing
+//Parent class methods can be invoked using super keyword.
+
+class DoubleAdd extends Addition {
+    doubleAdd() {
+        return 2 * super.multiply();
+    }
+}
+var x = new DoubleAdd(2, 3);
+console.log(x.doubleAdd());     
+
+</script>

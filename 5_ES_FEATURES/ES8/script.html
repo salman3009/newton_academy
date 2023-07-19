@@ -1,0 +1,70 @@
+<script>
+//1.
+Object.values()
+//Access all the values of our object without any complication. Here’s an example:
+
+const countries = {    BR: 'Brazil',    DE: 'Germany',    RO: 'Romania',    US: 'United States of America'};
+Object.values(countries); // ['Brazil', 'Germany', 'Romania', 'United States of America']
+Object.entries(countries);
+//Turn your object attribute in an array of attributes:
+
+const countries = {    BR: 'Brazil',    DE: 'Germany',    RO: 'Romania',    US: 'United States of America'};
+Object.entries(countries); 
+// [['BR', 'Brazil'], ['DE', 'Germany'], ['RO', 'Romania'], ['US','United States of America']]
+//============================================================================
+//2.
+//String padding (padStart and padEnd)
+//This returns the passed string adding the pad and the beginning or in the end of it. The function definition is:
+
+'string'.padStart(targetLength, padString)
+'string'.padEnd(targetLength, padString)
+//We can make:
+
+'0.10'.padStart(10); // it return a string of length 10, padding empty spaces in the beginning
+'hi'.padStart(1);            // 'hi''hi'.padStart(5);            // '   hi''hi'.padStart(5, 'abcd');    // 'abchi''hi'.padStart(10, 'abcd');   // 'abcdabcdhi'
+'loading'.padEnd(10, '.');   // 'loading...'
+// useful example making things easier to read'0.10'.padStart(12);         // '       0.10''23.10'.padStart(12);        // '      23.10''12,330.10'.padStart(12);    // '  12,330.10'
+//======================================================================================
+//3.Object.getOwnPropertyDescriptors()
+//It returns all own (non-inherited) property descriptors of an object. The attributes of the return object can be: value, writable, get, set, configurable and enumerable.
+
+const obj = {    name: 'Pablo',    get foo() { return 42; }};
+Object.getOwnPropertyDescriptors(obj);
+
+const objTarget = {};
+const objSource = {    
+    set greet(name)
+     { console.log('hey, ' + name); }};
+     Object.assign(objTarget, objSource);
+objTarget.greet = 'love';   
+// trying to set fails, sets greet = 'love'
+
+//Solving:
+const objTarget = {};
+const objSource = {   
+     set greet(name) 
+     { console.log('hey, ' + name); }};
+     Object.defineProperties(objTarget,                    
+  Object.getOwnPropertyDescriptors(objSource));
+  objTarget.greet = 'love'; // prints 'hey, love'
+//================================================================
+//4.Trailing commas in function parameter lists and calls
+//This is a syntax change. It allows us to write a valid function declaration with comma in the end.
+getDescription(name, age,) { }
+//=======================================================
+//5.This makes it much easier to work with asynchronous functions:
+
+function loadExternalContent() {   
+     return new Promise((resolve, reject) => {     
+            setTimeout(() => {resolve('hello');}, 3000); });}
+
+async function getContent() {    
+    const text = await loadExternalContent();    
+    console.log(text);
+}
+console.log('it will call function');
+getContent();
+console.log('it called function');
+
+//===================================================================
+</script>

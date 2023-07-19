@@ -1,0 +1,40 @@
+<html>
+    <head>Template Literal</head>
+    <body>
+
+    </body>
+</html>
+<script>
+
+
+const wendy = {  "id": 1,
+                 "firstName": "Wendy", 
+                 "lastName":  "Harper",
+                 "city":      "Tulsa"
+            }
+
+function bio(person) {
+return `<p>
+    <h1>
+        <span>${person.firstName}</span>
+        <span>${person.lastName}</span>
+     </h1>
+        <address>${person.city}</address>
+    </p>`
+}
+bio(wendy)
+console.log(bio(wendy));
+
+
+let person ={
+    fn:`salman`,
+    ln:`G`,
+    name:function()
+    {
+        return `My name is ${this.fn} ${this.ln}`;
+    }
+};
+person.name();
+
+console.log(person.name());
+</script>

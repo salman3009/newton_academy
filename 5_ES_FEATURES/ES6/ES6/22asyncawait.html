@@ -1,0 +1,29 @@
+<script>
+
+
+function what(){
+    return new Promise(function(resolve){
+        setTimeout(()=>{
+           resolve(2);
+        },2000)
+    });
+}
+
+function how(){
+    return new Promise(function(resolve){
+        setTimeout(()=>{
+            resolve(5);
+        },4000)
+    });
+}
+
+async function  final()
+{
+  let a = await what();
+  let b = await how();
+  console.log(a);
+  console.log(b);
+}
+final();
+
+</script>

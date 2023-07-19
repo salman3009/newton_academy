@@ -1,0 +1,13 @@
+<script>
+  async function load() {
+    let say = await import('./add.js');
+    say.hi(); // Hello!
+    say.bye(); // Bye!
+    say.default(); // Module loaded (export default)!
+  }
+
+load().then((response)=>{
+console.log("response",response);
+}).catch();
+
+</script>

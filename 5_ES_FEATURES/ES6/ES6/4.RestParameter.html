@@ -1,0 +1,25 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p>Rest Parameter</p>
+    </body>
+</html>
+<script>
+//Rest Parameter:
+//Rest allows indefinite number of parameters in one single array.Notation...
+
+function sum(...args)
+{
+    var result=0;
+    args.forEach(function(args)
+    {
+        result+=args;
+    })
+    return result;
+}
+let [x,y,z]=[1,2,3];
+let add=sum(x,y,z);
+console.log(add);//--->6
+</script>
