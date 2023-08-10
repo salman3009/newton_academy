@@ -1,0 +1,42 @@
+Introduction:
+//Internet:Sharing information from system to another 
+//web - 
+the Internet consisting of the pages that can be accessed by a Web browser.
+//http - hyper text transfer protocol 
+//ftp - file transfer protocol 
+//smtp - simple mail tranfer protocol 
+//frontend 
+//backend 
+//IP - Internet protocol 
+//TCP - Transmission control protocol 
+//URL - Uniform resource locator 
+//https - hyper text tranfer protocol secure 
+//circuit switching 
+//packet switching 
+//DNS - Domain Name server 
+//www - link text with another information 
+//HTML _ it is used to create pages to be displayed on the internet.
+=====================================================================
+TCP - transmission control protocol (connection reliable & stable connection)
+network - it is going to connect with one system to another system (to share the information)
+internet - anyone can able to access this information
+intranet - within the network (particular set of system)
+IP - 192.196.173
+http://www.amazon.com ---- DNS ------> IP address 
+www - we are going to share the information in the network in the form of hypertext document 
+page - some set of information 
+webpage - sharing the page information to network 
+website - collection of webpage 
+browser - to access the website we need the browser 
+hypertext and hyperlink 
+hyper - one information with that information you will get another information 
+link - clickable information 
+text - general information 
+
+http - hyper text transfer protocol 
+
+server - someone is going to provide you the service is called server 
+youtube -- server ----------> web server 
+flipkart -server   ----->web server 
+netflix - server   -->web server 
+==========================================================
