@@ -1,0 +1,58 @@
+https://my.newtonschool.co/playground/markup/dyk7nciqiwz9
+
+<div class="grid-container">
+    <nav class="nav-bar">Navigation Bar</nav>
+    <aside class="left-side-bar">Left Sidebar</aside>
+    <main class="main">Main</main>
+    <aside class="right-side-bar">Ad Sidebar</aside>
+    <footer class="footer">Footer</footer>
+  </div>
+
+  <style>
+    body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 150px auto 150px;
+  grid-template-rows: 50px auto 50px;
+  height: 100vh;
+  grid-template-areas:
+    "navbar navbar navbar"
+    "left-sidebar main right-sidebar"
+    "footer footer footer";
+}
+
+.nav-bar {
+  grid-area: navbar;
+  background-color: yellowgreen;
+  text-align: center;
+}
+
+.left-side-bar {
+  grid-area: left-sidebar;
+  background-color: violet;
+  text-align: center;
+}
+
+.main {
+  grid-area: main;
+  background-color: red;
+  text-align: center;
+}
+
+.right-side-bar {
+  grid-area: right-sidebar;
+  background-color: blueviolet;
+  text-align: center;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: chocolate;
+  text-align: center;
+}
+  </style>
