@@ -1,1 +1,18 @@
 https://github.com/billfienberg/grid-garden
+
+grid:
+1.grid-column
+2.grid-row 
+3.grid-column:span 2
+4.grid-row:span 2
+5.grid-column:1/3 
+6.grid-row:1/3 
+7.grid-area: 2 / 1 / span 2 / span 3;
+8.grid-template
+9.gap 
+10.grid-template-areas/grid-area
+11.justify
+12.algin
+
+order:
+If using auto-placement then the order property will affect how items are placed on the grid. In this example all boxes have been give an order of 1, so they continue to be positioned in DOM order. However box1 has an order of 3 and box2 an order of 2. These boxes have a higher order value so are positioned after all of the boxes with an order value of 1.
